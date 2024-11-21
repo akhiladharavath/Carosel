@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+body, .carousel-container{
+    margin:0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #151515;
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img{
+    position: absolute;
+    max-width: 100vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.next, .prev{
+    position: absolute;
+    top:50%;
+    width:50px;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.next{
+    right:70px;
+}
+.prev{
+    left:70px;
+    transform: translateY(-50%) scaleX(-1);
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dots{
+    display:flex;
+    margin-top: 700px;
+    z-index:2;
+}
+.dot{
+    width:14px;
+    height: 14px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: gray;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dot.active{
+    background: white;
 }
